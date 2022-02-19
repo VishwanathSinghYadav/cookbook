@@ -1,10 +1,12 @@
-import React from "react";
+import React from 'react'
+import Book from "./Book.js"
 
-export default function BookList(props) {
+export default function BookList() {
   return (
     <>
-      <div>BookList</div>
+    <Book/>
+    <Book/>
     </>
-  );
+  )
 }
-
+  
