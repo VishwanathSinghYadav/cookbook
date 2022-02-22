@@ -1,12 +1,12 @@
 import React from 'react'
 import Book from "./Book.js"
 
-export default function BookList() {
+export default function BookList({props}) {
+
   return (
-    <>
-    <Book/>
-    <Book/>
-    </>
+    <div>
+      <Book key={books.id} />
+    </div>
   )
 }
   

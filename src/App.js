@@ -8,7 +8,7 @@ function App() {
     <div>
       <ThemeContexProvider>
         <NavBar />
-        <BookList />
+        <BookList BookList={books}/>
       </ThemeContexProvider>
     </div>
   );
@@ -23,7 +23,7 @@ const books=[
     pages: '489',
     theme: 'The Da Vinci Code follows "symbologist" Robert Langdon and cryptologist Sophie Neveu after a murder in the Louvre Museum in Paris causes them to become involved in a battle between the Priory of Sion and Opus Dei over the possibility of Jesus Christ and Mary Magdalene having had a child together.'}
     ,
-    {id: 1,
+    {id: 2,
       title: "Harry Potter",
       edition: 7(1997-2007),
       author: "J. K. Rowling",
