@@ -1,10 +1,12 @@
 import React from 'react'
+import EditionList from './EditionList'
 
-export default function Book() {
-  return (
+export default function Book(props) {
+  const {title,edition,author,genre,pages,theme, editions}=props
+    return (
     <div>
         <div>
-            <h3>Harry Potter</h3>
+            <h3>{title}</h3>
             <div>
                 <button>Edit</button>
                 <button>Delete</button>
@@ -12,23 +14,26 @@ export default function Book() {
         </div>
         <div>
             <span>Edition: </span>
-            <span>7(1997-2007)</span>
+            <span>{edition}</span>
         </div>
         <div>
             <span>Author: </span>
-            <span>J. K. Rowling</span>
+            <span>{author}</span>
         </div>
         <div>
             <span>Genre: </span>
-            <span>Fantasy</span>
+            <span>{genre}</span>
         </div>
         <div>
             <span>Pages: </span>
-            <span>223, 251, 317, 636, 766, 607, 607</span>
+            <span>{pages}</span>
         </div>
         <div>
             <span>Theme: </span>
-            <span>According to Rowling, the main theme is death. Other major themes in the series include prejudice, corruption, and madness.</span>
+            <span>{theme}</span>
+        </div>
+        <div>
+            <EditionList editions={editions}/>
         </div>
     </div>
   )
