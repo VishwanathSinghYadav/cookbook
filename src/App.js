@@ -1,22 +1,52 @@
 import "./App.css";
+import React,{useState} from "react"
 import NavBar from "./components/NavBar";
 import BookList from "./components/BookList";
 import ThemeContexProvider from "./contexts/ThemeContext";
+import { v4 as uuidv4 } from 'uuid';
 
 
 
 function App() {
+  
+  const [newBookState,setNewBookState]=useState(books)
+
   return (
     <div>
       <ThemeContexProvider>
         <NavBar />
-        <BookList books={books}/>
+        <BookList key={uuidv4()} books={books}
+        handleAddbook={handleAddbook}
+        />
+        
       </ThemeContexProvider>
     </div>
   );
+
+  function handleAddbook(){
+    const newBook={
+      id:uuidv4(),
+      title: "",
+      edition: "",
+      author: "",
+      genre: "",
+      pages: "",
+      theme: "",
+      editions:[
+        {
+          id: uuidv4(),
+          title: "--",
+          year: "--"
+        }
+      ]
+    }
+    setNewBookState([...newBookState, newBook])
+  }
 }
+
+
 const books=[
-    {id: 1,
+    {id: uuidv4(),
       title: "Da Vinci Code",
       edition: "2013",
       author: "Dan Brown",
@@ -26,14 +56,14 @@ const books=[
       editions: [
         
         {
-          id:1,
+          id:uuidv4(),
           title: "--",
           year: "--"
         }
       ] 
     }
       ,
-      {id: 2,
+      {id: uuidv4(),
         title: "Harry Potter",
         edition: "7(1997-2007)",
         author: "J. K. Rowling",
@@ -43,38 +73,38 @@ const books=[
         editions:[
           
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Sorcerer's Stone",
           year: "1997"
         },
     
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Chamber of Secrets",
           year: "1998"
         },
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Prisoner of Azkaban",
           year: "1999"
         },
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Goblet of Fire",
           year: "2000"
         },
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Order of the Phoenix",
           year: "2003"
         },
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Half-Blood Prince",
           year: "2005"
         },
         {
-          id:1,
+          id:uuidv4(),
           title: "Harry Potter and the Deathly Hallows",
           year: "2007"
         }

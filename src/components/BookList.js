@@ -1,7 +1,7 @@
 import React from 'react'
 import Book from "./Book.js"
 
-export default function BookList({books}) {
+export default function BookList({books, handleAddbook}) {
 
   return (
     <div>
@@ -9,6 +9,7 @@ export default function BookList({books}) {
         return <>
         <Book key={book.id} {...book}/></>
       })}
+      <button onClick={handleAddbook}>Add Book</button>
     </div>
   )
 }
