@@ -40,7 +40,7 @@ function App() {
         }
       ]
     }
-    setNewBookState([...newBookState, newBook])
+    return(setNewBookState([...newBookState, newBook]))
   }
 }
 
